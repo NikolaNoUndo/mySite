@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('../assets/SFProRounded.otf') format('opentype');
+  font-weight: 500;
+}
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  background: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  letter-spacing: 2%;
+}
+
+.container {
+  width: 100%;
+  max-width: 680px;
+  margin-top: 128px;
+}
+
+p { line-height: 1.6; }
+
+.muted {
+  color: rgba(0,0,0,0.5);
+}
+
+.name{
+  margin-bottom: 4px;
+}
+.updated{
+  margin-bottom: 32px;
+}
+.bio p{
+  margin-bottom: 16px;
+}
+.pricing{
+  margin-bottom: 16px;
+}
+
+.price {
+  color: #FF0000;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.price img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.links{
+  margin-bottom: 64px;
+}
+.links a{
+  color: #000;
+  text-decoration: none;
+}
+.links a:hover{
+  opacity: 0.5;
+}
+
+.footer p{
+  color: rgba(0,0,0,0.5);
+  margin-bottom: 4px;
+}
+.footer p:last-child{
+  margin-bottom: 0;
+}
+.footer a{
+  color: #000;
+  text-decoration: none;
+}
+
+#colon{
+  animation: blink 5s ease-in-out infinite;
+}
+
+::selection {
+  background: #FF0000;
+  color: #fff;
+}
+
+@keyframes blink {
+  0%, 82% { opacity: 1; }
+  89%      { opacity: 0; }
+  96%      { opacity: 1; }
+}
