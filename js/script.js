@@ -12,6 +12,13 @@ function tick() {
   if (m.textContent !== t[1]) m.textContent = t[1];
 }
 
+window.addEventListener('load', function() {
+  const loader = document.getElementById('loader');
+  setTimeout(() => {
+    loader.classList.add('fade-out');
+  }, 100); 
+});
+
 tick();
 setInterval(tick, 10000);
 
