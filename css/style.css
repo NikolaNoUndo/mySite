@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
     padding: 0 20px;
+    padding-bottom: 64px;
     letter-spacing: 0.02em;
   }
 
@@ -73,7 +74,10 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    cursor: default; 
+    cursor: default;
+    padding: 12px 16px;
+    margin: -12px -16px;
+    vertical-align: middle;
   }
 
   .ticket-icon {
@@ -134,12 +138,84 @@
   #colon{
     animation: blink 4s ease-in-out infinite;
   }
+  .work-section {
+    max-width: 680px;
+    margin: 64px 0 0 0; 
+    padding: 0; 
+    text-align: left;
+  }
+  .work-label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .work-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .project-row {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  .two-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .work-thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 0.5px solid #cacaca; 
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+  }
+  @media (max-width: 600px) {
+    .two-cols {
+      grid-template-columns: 1fr;
+    }
+    
+    .work-section {
+      margin-top: 40px;
+    }
+  }
 
   ::selection {
     background: #FF0000;
     color: #fff;
   }
 
+  .work-thumb.zoomed {
+    position: relative;
+    z-index: 10001;
+    cursor: zoom-out;
+    border: none;
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
+  }
+  .zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.24s ease;
+    pointer-events: none;
+  }
+  .zoom-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: zoom-out;
+  }
   @keyframes blink {
     0%, 82% { opacity: 1; }
     89%      { opacity: 0; }
