@@ -151,7 +151,7 @@
     font-weight: 500;
     color: #111;
     margin-bottom: 16px;
-    font-size: 16px;
+    font-size: 14px;
   }
   .work-grid {
     display: flex;
@@ -185,12 +185,10 @@
       margin-top: 40px;
     }
   }
-
   ::selection {
     background: #FF0000;
     color: #fff;
   }
-
   .work-thumb.zoomed {
     position: relative;
     z-index: 10001;
@@ -198,6 +196,12 @@
     border: none;
     transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
   }
+  .work-thumb {
+  image-rendering: -webkit-optimize-contrast; 
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  will-change: transform;
+}
   .zoom-overlay {
     position: fixed;
     top: 0;

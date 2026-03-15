@@ -46,29 +46,28 @@ images.forEach(img => {
 });
 
 function zoomIn(img) {
-  const rect = img.getBoundingClientRect();
-  const scale = Math.min(window.innerWidth / rect.width, window.innerHeight / rect.height) * 0.9;
   
-  // Izračunavamo centar
+  const rect = img.getBoundingClientRect();
+  const naturalWidth = img.naturalWidth;
+  let scale = Math.min(window.innerWidth / rect.width, window.innerHeight / rect.height) * 0.9;
   const translateX = (window.innerWidth / 2) - (rect.left + rect.width / 2);
   const translateY = (window.innerHeight / 2) - (rect.top + rect.height / 2);
-
   img.classList.add('zoomed');
+  const maxSafeScale = naturalWidth / rect.width;
   overlay.classList.add('active');
-  
-  // Pomeramo sliku na centar i povećavamo je
   img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-  document.body.style.overflow = 'hidden'; // Stop skrol
+  document.body.style.overflow = 'hidden';
+  if (scale > maxSafeScale) {
+    scale = maxSafeScale;
+  }
 }
 
 function zoomOut(img) {
   img.style.transform = '';
   img.classList.remove('zoomed');
   overlay.classList.remove('active');
-  document.body.style.overflow = ''; // Vrati skrol
+  document.body.style.overflow = '';
 }
-
-// Zatvori na klik na pozadinu ili ESC
 overlay.addEventListener('click', () => {
   const zoomedImg = document.querySelector('.work-thumb.zoomed');
   if (zoomedImg) zoomOut(zoomedImg);
