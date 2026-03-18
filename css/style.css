@@ -64,7 +64,7 @@
 
   .rocket-icon {
     display: inline-block;
-    width: 20px;
+    width: 16px;
     height: auto;
     margin-left: 8px;
     opacity: 0;
@@ -74,19 +74,19 @@
   }
   .name:hover .rocket-icon {
     opacity: 1; 
-    transform: translateX(2px) rotate(-15deg);
+    transform: translateX(0px) rotate(-15deg);
     animation: 
       rocket-slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards, 
       rocket-swing 1s ease-in-out 0.4s infinite;
   }
   @keyframes rocket-slide-in {
     from { opacity: 0; transform: translateX(0) rotate(0deg); }
-    to { opacity: 1; transform: translateX(2px) rotate(-15deg); }
+    to { opacity: 1; transform: translateX(0px) rotate(-15deg); }
   }
   @keyframes rocket-swing {
-    0% { transform: translateX(2px) rotate(-15deg); }
-    50% { transform: translateX(2px) rotate(-11deg); }
-    100% { transform: translateX(2px) rotate(-15deg); }
+    0% { transform: translateX(0px) rotate(-15deg); }
+    50% { transform: translateX(0px) rotate(-11deg); }
+    100% { transform: translateX(0px) rotate(-15deg); }
   }
   .updated{
     margin-bottom: 32px;
@@ -103,7 +103,7 @@
     color: #FF0000;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
     cursor: default;
     padding: 12px 16px;
     margin: -12px -16px;
@@ -112,8 +112,8 @@
   .ticket-icon {
     display: inline-block;
     vertical-align: middle;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     transition: transform 120ms ease-in-out;
   }
   .price:hover .ticket-icon {
