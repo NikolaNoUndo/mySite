@@ -41,7 +41,7 @@
   .container {
     width: 100%;
     max-width: 680px;
-    margin-top: 128px;
+    margin-top: 20vh;
   }
 
   p {line-height: 1.6;}
