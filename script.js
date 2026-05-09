@@ -226,7 +226,7 @@ toRow.appendChild(makeStaticBlock('<daryl@example.com>', detailFont, 'vertical-a
 detailsBox.innerHTML = `
   <div><strong>From:</strong> Nikola Stojkovic &lt;info@itsnikola.site&gt;</div>
   <div><strong>Date:</strong> Today, <span id="detailsTime"></span></div>
-  <div><strong>Subject:</strong> Re: Welcome to Godly</div>
+  <div><strong>Subject:</strong> Re: The Conversation Starter</div>
 `;
 // Insert To row as second child (after From)
 detailsBox.insertBefore(toRow, detailsBox.children[1]);
