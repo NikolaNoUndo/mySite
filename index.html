@@ -3,7 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Re: The Conversation Starter</title>
+  <title>Nikola Stojkovic — Product Designer</title>
+  <meta name="description" content="B2B, AI, and fintech product designer. I design in the same logic your developers code — zero friction, faster launch, and digital experiences users trust." />
+  <meta name="author" content="Nikola Stojkovic" />
+  <link rel="canonical" href="https://itsnikola.site/" />
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://itsnikola.site/" />
+  <meta property="og:title"        content="Nikola Stojkovic — Product Designer" />
+  <meta property="og:description"  content="B2B, AI, and fintech product designer. I design in the same logic your developers code — zero friction, faster launch, and digital experiences users trust." />
+  <meta property="og:image"        content="https://itsnikola.site/images/og-card.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"       content="en_US" />
+  <meta property="og:site_name"    content="itsnikola.site" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@nikolaNoUndo" />
+  <meta name="twitter:creator"     content="@nikolaNoUndo" />
+  <meta name="twitter:title"       content="Nikola Stojkovic — Product Designer" />
+  <meta name="twitter:description" content="B2B, AI, and fintech product designer. I design in the same logic your developers code — zero friction, faster launch, and digital experiences users trust." />
+  <meta name="twitter:image"       content="https://itsnikola.site/images/og-card.png" />
+  <link rel="icon" id="favicon" href="images/pfp.png" type="image/png" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,19 +37,47 @@
         <span class="label">Inbox <span class="label-x">×</span></span>
       </div>
       <div class="header-icons">
-        <button class="icon-btn" title="Print">
+        <!-- Desktop: Print + External -->
+        <button class="icon-btn desktop-only" title="Print">
           <img src="icons/print.svg" width="18" height="18" alt="Print" class="icon" />
         </button>
-        <button class="icon-btn" title="Open in new window">
+        <button class="icon-btn desktop-only" title="Open in new window">
           <img src="icons/external-link.svg" width="18" height="18" alt="Open in new window" class="icon" />
         </button>
+        <!-- Mobile: reply visible in header -->
+        <button class="icon-btn mobile-only" title="Reply" id="mobileReplyBtn">
+          <img src="icons/reply.svg" width="18" height="18" alt="Reply" class="icon" />
+        </button>
+        <!-- Mobile: three-dots -->
+        <div class="more-menu-wrap mobile-only">
+          <button class="icon-btn" title="More options" id="moreBtn">
+            <img src="icons/more.svg" width="18" height="18" alt="More" class="icon" />
+          </button>
+          <div class="more-dropdown" id="moreDropdown">
+            <button class="more-item" id="menuStar">
+              <img src="icons/star.svg" width="18" height="18" alt="" class="icon more-icon" id="moreStarIcon" />
+              <span id="moreStarLabel">Star</span>
+            </button>
+            <button class="more-item" id="menuEmoji">
+              <img src="icons/emoji.svg" width="18" height="18" alt="" class="icon more-icon" id="moreEmojiIcon" />
+              <span id="moreEmojiLabel">Add reaction</span>
+            </button>
+            <div class="more-divider"></div>
+            <button class="more-item" id="menuPrint">
+              <img src="icons/print.svg" width="18" height="18" alt="" class="icon more-icon" />Print
+            </button>
+            <button class="more-item" id="menuNewWindow">
+              <img src="icons/external-link.svg" width="18" height="18" alt="" class="icon more-icon" />Open in new window
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Sender row -->
     <div class="sender-row">
-      <div class="avatar">
-        <img src="images/pfp.png" alt="Profile Picture" class="avatar-img" />
+      <div class="avatar" id="avatarBtn">
+        <img src="images/pfp.png" alt="Profile Picture" class="avatar-img" id="avatarImg" />
       </div>
 
       <div class="sender-info">
@@ -38,7 +85,8 @@
           <span class="sender-name">Nikola Stojkovic</span>
           <span class="sender-email">&lt;info@itsnikola.site&gt;</span>
           <span class="time">15:43 (45 minutes ago)</span>
-          <div class="action-icons">
+          <!-- Desktop action icons -->
+          <div class="action-icons desktop-only">
             <button class="icon-btn" title="Star">
               <img src="icons/star.svg" width="18" height="18" alt="Star" class="icon" />
             </button>
@@ -53,10 +101,12 @@
             </button>
           </div>
         </div>
-
-        <div class="sender-to">
-          to You
-          <img src="icons/chevron-down.svg" width="14" height="14" alt="" class="chevron icon" />
+        <div class="sender-to-row">
+          <div class="sender-to">
+            to You
+            <img src="icons/chevron-down.svg" width="14" height="14" alt="" class="chevron icon" />
+          </div>
+          <span class="time-mobile">15:43 (45 minutes ago)</span>
         </div>
       </div>
     </div>
@@ -64,21 +114,59 @@
     <!-- Body -->
     <div class="email-body">
       <p>Hi [Name],</p>
-      <p>I'm a product designer who actually gets the tech. I help B2B, AI, and fintech founders build things that don't just look pretty, but earn user trust and actually work.</p>
-      <p>With my background as an IT student and years of programming experience, I bridge the gap between aesthetic design and technical feasibility. My goal is always the same: truly useful, clean design that turns heads and hits goals.</p>
-      <p>I design digital experiences so seamless that closing the application is the last thing on the user's mind.</p>
-      <p>I'm always down to talk business, F1 pit strategies, or just to say hi. Are you open to a quick chat about your current design goals?</p>
-      <p>Best,<br>Nikola Stojkovic</p>
-
+      <p>Most designers just draw pretty screens. Having sharpened my approach at <a href="https://baked.design" target="_blank" rel="noopener" style="color:#202124;font-weight:500;text-underline-offset:3px;">baked.design</a>, I build B2B, AI, and fintech interfaces that actually work, scale, and clear out technical debt.</p>
+      <p>Open to a quick chat about your product goals? If your development pipeline needs a faster, precision launch, let's stop guessing the strategy.</p>
+      <p>In the meantime, you can <a href="#" id="worksLink" class="works-chip"><img src="icons/works-icon.svg" width="16" height="16" alt="" class="works-chip-icon" />see_my_works.here</a></p>
+      <p>All the best,<br>Nikola Stojkovic</p>
       <hr class="email-divider" />
-
       <p class="social-links">
         <a href="https://x.com/nikolaNoUndo" target="_blank" rel="noopener">X (Twitter)</a>,
         <a href="https://www.linkedin.com/in/nikolanoundo" target="_blank" rel="noopener">LinkedIn</a>,
-        <a href="t.me/nikolaNoUndo" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/nikolaNoUndo" target="_blank" rel="noopener">Telegram</a>
       </p>
     </div>
 
+
+
+  </div>
+
+  <!-- ── Works Lightbox ── -->
+  <div class="lb-overlay" id="lbOverlay" aria-hidden="true">
+    <div class="lb-main">
+      <!-- Toolbar -->
+      <div class="lb-toolbar">
+        <div class="lb-toolbar-left">
+          <button class="lb-btn" id="lbClose" title="Close">
+            <img src="icons/close.svg" width="18" height="18" alt="Close" class="lb-icon" />
+          </button>
+          <div class="lb-title">
+            <img src="icons/works-icon.svg" width="16" height="16" alt="" style="border-radius:3px;flex-shrink:0;" />
+            <span>see_my_works.here</span>
+          </div>
+        </div>
+        <div class="lb-toolbar-right">
+          <button class="lb-btn" id="lbDownload" title="Save image">
+            <img src="icons/download.svg" width="18" height="18" alt="Download" class="lb-icon" />
+          </button>
+          <button class="lb-btn" id="lbPrint" title="Print">
+            <img src="icons/print.svg" width="18" height="18" alt="Print" class="lb-icon" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable images -->
+      <div class="lb-scroll" id="lbScroll">
+        <div class="lb-inner" id="lbInner"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden print iframe -->
+  <iframe id="printFrame" style="display:none;"></iframe>
+
+  <!-- ── Dizzy modal ── -->
+  <div class="dizzy-modal" id="dizzyModal">
+    <span class="dizzy-emoji" id="dizzyEmoji">😵‍💫</span>
   </div>
 
   <script src="script.js"></script>
