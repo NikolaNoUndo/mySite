@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin</title>
+  <!-- No index, no follow — keep out of search engines -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Inter var","Inter",-apple-system,sans-serif;
+      font-size: 14px;
+      font-weight: 450;
+      background: #f5f5f5;
+      color: #111;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Login screen ── */
+    #loginScreen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .login-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+    }
+
+    .login-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .login-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .login-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 6px;
+    }
+
+    .login-sub {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 28px;
+    }
+
+    .field { margin-bottom: 16px; }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .field input {
+      width: 100%;
+      height: 40px;
+      border: 1.5px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 0 12px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 450;
+      color: #111;
+      background: #fafafa;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .field input:focus { border-color: #111; background: #fff; }
+    .field input.error { border-color: #e53935; }
+
+    .login-btn {
+      width: 100%;
+      height: 40px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.15s;
+    }
+
+    .login-btn:hover { background: #333; }
+
+    .login-error {
+      font-size: 12px;
+      color: #e53935;
+      margin-top: 12px;
+      text-align: center;
+      min-height: 18px;
+    }
+
+    /* ── Admin dashboard ── */
+    #adminScreen { display: none; min-height: 100vh; }
+
+    .admin-nav {
+      height: 52px;
+      background: #fff;
+      border-bottom: 1px solid #ebebeb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .admin-nav-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .admin-nav-right { display: flex; gap: 8px; align-items: center; }
+
+    .nav-btn {
+      height: 32px;
+      padding: 0 14px;
+      border-radius: 8px;
+      border: 1.5px solid #e8e8e8;
+      background: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: #444;
+      cursor: pointer;
+      transition: background 0.12s, border-color 0.12s;
+    }
+
+    .nav-btn:hover { background: #f5f5f5; border-color: #ccc; }
+
+    .nav-btn.primary {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .nav-btn.primary:hover { background: #333; border-color: #333; }
+
+    /* ── Main content ── */
+    .admin-body {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 24px;
+    }
+
+    /* ── Upload zone ── */
+    .upload-zone {
+      border: 2px dashed #d8d8d8;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      background: #fafafa;
+      margin-bottom: 32px;
+    }
+
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color: #111;
+      background: #f0f0f0;
+    }
+
+    .upload-zone-icon { font-size: 32px; margin-bottom: 10px; }
+
+    .upload-zone-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 4px;
+    }
+
+    .upload-zone-sub { font-size: 12px; color: #aaa; }
+
+    #fileInput { display: none; }
+
+    /* ── Works grid ── */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .work-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid #ebebeb;
+      overflow: hidden;
+      transition: box-shadow 0.15s;
+      position: relative;
+    }
+
+    .work-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+    .work-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+    }
+
+    .work-card-body {
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .work-card-info { min-width: 0; flex: 1; }
+
+    .work-card-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: #111;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .work-card-order {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    .work-card-actions { display: flex; gap: 4px; flex-shrink: 0; }
+
+    .card-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1.5px solid #e8e8e8;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: background 0.12s, border-color 0.12s;
+      flex-shrink: 0;
+    }
+
+    .card-btn:hover { background: #f5f5f5; border-color: #ccc; }
+
+    .card-btn.danger:hover { background: #ffeaea; border-color: #f8a0a0; }
+
+    /* ── Order drag handle ── */
+    .work-card { cursor: default; }
+    .work-card.dragging { opacity: 0.4; }
+    .work-card.drag-over { border-color: #111; }
+
+    /* ── Empty state ── */
+    .empty-state {
+      text-align: center;
+      padding: 60px 0;
+      color: #aaa;
+    }
+
+    .empty-state-icon { font-size: 40px; margin-bottom: 12px; }
+    .empty-state-text { font-size: 14px; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 20px;
+      z-index: 1000;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ── Rename modal ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s;
+    }
+
+    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .modal-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px;
+      width: 340px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    }
+
+    .modal-title { font-size: 15px; font-weight: 600; margin-bottom: 16px; }
+
+    .modal-input {
+      width: 100%;
+      height: 38px;
+      border: 1.5px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 0 12px;
+      font-family: inherit;
+      font-size: 14px;
+      color: #111;
+      outline: none;
+      margin-bottom: 16px;
+      transition: border-color 0.15s;
+    }
+
+    .modal-input:focus { border-color: #111; }
+
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  </style>
+</head>
+<body>
+
+<!-- ── Login ── -->
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">
+      <img src="images/pfp.png" alt="" />
+    </div>
+    <div class="login-title">Admin Panel</div>
+    <div class="login-sub">Manage your portfolio works</div>
+    <div class="field">
+      <label>Username</label>
+      <input type="text" id="loginUser" autocomplete="username" spellcheck="false" />
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="loginPass" autocomplete="current-password" />
+    </div>
+    <button class="login-btn" id="loginBtn">Sign in</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</div>
+
+<!-- ── Dashboard ── -->
+<div id="adminScreen">
+  <nav class="admin-nav">
+    <div class="admin-nav-title">Portfolio Admin</div>
+    <div class="admin-nav-right">
+      <a href="index.html" target="_blank" style="text-decoration:none;">
+        <button class="nav-btn">View site ↗</button>
+      </a>
+      <button class="nav-btn" id="logoutBtn">Log out</button>
+    </div>
+  </nav>
+
+  <div class="admin-body">
+    <div class="section-title">Works</div>
+    <div class="section-sub">Drag cards to reorder. Changes save automatically.</div>
+
+    <!-- Upload zone -->
+    <div class="upload-zone" id="uploadZone">
+      <div class="upload-zone-icon">🖼️</div>
+      <div class="upload-zone-text">Drop images here or click to upload</div>
+      <div class="upload-zone-sub">JPG, PNG, WebP — multiple files supported</div>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" multiple />
+
+    <!-- Grid -->
+    <div class="works-grid" id="worksGrid"></div>
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <div class="empty-state-icon">📂</div>
+      <div class="empty-state-text">No works yet. Upload your first image above.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Rename modal -->
+<div class="modal-overlay" id="renameModal">
+  <div class="modal-card">
+    <div class="modal-title">Rename project</div>
+    <input class="modal-input" id="renameInput" type="text" placeholder="Project name" />
+    <div class="modal-actions">
+      <button class="nav-btn" id="renameCancelBtn">Cancel</button>
+      <button class="nav-btn primary" id="renameSaveBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── Credential verification (PBKDF2, no plaintext stored) ─
+async function pbkdf2(input, salt) {
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey('raw', enc.encode(input), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', salt: enc.encode(salt), iterations: 100000, hash: 'SHA-512' },
+    key, 512
+  );
+  return Array.from(new Uint8Array(bits)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+const U_HASH = 'bdf97a2766a7c5d4b43a1f7ad72ccea92a992a91c52bc53a49182d6651877cb2090bdeeed1028c575f259c399584106379893e9124808f66a7db8e793aad5589';
+const P_HASH = '789fa9175898e2f5dabd183087421d9cfead29e5a48535aeb52609b69cfcabbe102f046052bd65721527f74efbbc99fd90fb5f8bf4801920f9ddc5f36b433a0d';
+
+// ── Session ─────────────────────────────────────────────
+const SESSION_KEY = 'ns_admin_ok';
+
+function isLoggedIn() { return sessionStorage.getItem(SESSION_KEY) === '1'; }
+function setLoggedIn() { sessionStorage.setItem(SESSION_KEY, '1'); }
+function logout()      { sessionStorage.removeItem(SESSION_KEY); location.reload(); }
+
+// ── Boot ─────────────────────────────────────────────────
+if (isLoggedIn()) showAdmin();
+
+// ── Login ────────────────────────────────────────────────
+const loginBtn   = document.getElementById('loginBtn');
+const loginUser  = document.getElementById('loginUser');
+const loginPass  = document.getElementById('loginPass');
+const loginError = document.getElementById('loginError');
+
+async function attemptLogin() {
+  loginBtn.textContent = '…';
+  loginBtn.disabled = true;
+  loginError.textContent = '';
+
+  const [uh, ph] = await Promise.all([
+    pbkdf2(loginUser.value.trim(), 'nikola_site_salt_u'),
+    pbkdf2(loginPass.value,        'nikola_site_salt_p'),
+  ]);
+
+  if (uh === U_HASH && ph === P_HASH) {
+    setLoggedIn();
+    showAdmin();
+  } else {
+    loginError.textContent = 'Incorrect username or password.';
+    loginUser.classList.add('error');
+    loginPass.classList.add('error');
+    loginBtn.textContent = 'Sign in';
+    loginBtn.disabled = false;
+  }
+}
+
+loginBtn.addEventListener('click', attemptLogin);
+[loginUser, loginPass].forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') attemptLogin(); });
+  el.addEventListener('input',   () => el.classList.remove('error'));
+});
+
+document.getElementById('logoutBtn').addEventListener('click', logout);
+
+// ── Show admin ────────────────────────────────────────────
+function showAdmin() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminScreen').style.display = 'block';
+  renderGrid();
+}
+
+// ── Storage helpers ───────────────────────────────────────
+const STORE_KEY = 'ns_works';
+
+function loadWorks() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; }
+  catch { return []; }
+}
+
+function saveWorks(works) {
+  localStorage.setItem(STORE_KEY, JSON.stringify(works));
+}
+
+// ── Toast ─────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ── Render grid ───────────────────────────────────────────
+function renderGrid() {
+  const works = loadWorks();
+  const grid  = document.getElementById('worksGrid');
+  const empty = document.getElementById('emptyState');
+  grid.innerHTML = '';
+  empty.style.display = works.length ? 'none' : 'block';
+
+  works.forEach((w, i) => {
+    const card = document.createElement('div');
+    card.className = 'work-card';
+    card.draggable = true;
+    card.dataset.id = w.id;
+
+    card.innerHTML = `
+      <img class="work-card-img" src="${w.src}" alt="${w.name}" />
+      <div class="work-card-body">
+        <div class="work-card-info">
+          <div class="work-card-name">${w.name}</div>
+          <div class="work-card-order">#${i + 1}</div>
+        </div>
+        <div class="work-card-actions">
+          <button class="card-btn" title="Rename" data-action="rename" data-id="${w.id}">✏️</button>
+          <button class="card-btn danger" title="Delete" data-action="delete" data-id="${w.id}">🗑️</button>
+        </div>
+      </div>`;
+
+    // Drag-to-reorder
+    card.addEventListener('dragstart', e => {
+      e.dataTransfer.setData('text/plain', w.id);
+      card.classList.add('dragging');
+    });
+    card.addEventListener('dragend', () => card.classList.remove('dragging'));
+    card.addEventListener('dragover', e => { e.preventDefault(); card.classList.add('drag-over'); });
+    card.addEventListener('dragleave', () => card.classList.remove('drag-over'));
+    card.addEventListener('drop', e => {
+      e.preventDefault();
+      card.classList.remove('drag-over');
+      const fromId = e.dataTransfer.getData('text/plain');
+      if (fromId === w.id) return;
+      const works2 = loadWorks();
+      const fromIdx = works2.findIndex(x => x.id === fromId);
+      const toIdx   = works2.findIndex(x => x.id === w.id);
+      const [moved] = works2.splice(fromIdx, 1);
+      works2.splice(toIdx, 0, moved);
+      saveWorks(works2);
+      renderGrid();
+      showToast('Order saved');
+    });
+
+    grid.appendChild(card);
+  });
+
+  // Button actions
+  grid.querySelectorAll('[data-action]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action;
+      const id     = btn.dataset.id;
+      if (action === 'delete') deleteWork(id);
+      if (action === 'rename') openRename(id);
+    });
+  });
+}
+
+// ── Delete ────────────────────────────────────────────────
+function deleteWork(id) {
+  if (!confirm('Delete this work?')) return;
+  const works = loadWorks().filter(w => w.id !== id);
+  saveWorks(works);
+  renderGrid();
+  showToast('Deleted');
+}
+
+// ── Rename ────────────────────────────────────────────────
+let renameTargetId = null;
+
+function openRename(id) {
+  const works = loadWorks();
+  const w = works.find(x => x.id === id);
+  if (!w) return;
+  renameTargetId = id;
+  document.getElementById('renameInput').value = w.name;
+  document.getElementById('renameModal').classList.add('open');
+  setTimeout(() => document.getElementById('renameInput').select(), 50);
+}
+
+function closeRename() {
+  document.getElementById('renameModal').classList.remove('open');
+  renameTargetId = null;
+}
+
+document.getElementById('renameCancelBtn').addEventListener('click', closeRename);
+document.getElementById('renameModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('renameModal')) closeRename();
+});
+
+document.getElementById('renameSaveBtn').addEventListener('click', () => {
+  const name = document.getElementById('renameInput').value.trim();
+  if (!name || !renameTargetId) return;
+  const works = loadWorks();
+  const w = works.find(x => x.id === renameTargetId);
+  if (w) { w.name = name; saveWorks(works); renderGrid(); showToast('Renamed'); }
+  closeRename();
+});
+
+document.getElementById('renameInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('renameSaveBtn').click();
+  if (e.key === 'Escape') closeRename();
+});
+
+// ── Upload ────────────────────────────────────────────────
+const uploadZone = document.getElementById('uploadZone');
+const fileInput  = document.getElementById('fileInput');
+
+uploadZone.addEventListener('click', () => fileInput.click());
+uploadZone.addEventListener('dragover',  e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', ()  => uploadZone.classList.remove('dragover'));
+uploadZone.addEventListener('drop', e => {
+  e.preventDefault();
+  uploadZone.classList.remove('dragover');
+  handleFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+function handleFiles(files) {
+  const arr = Array.from(files).filter(f => f.type.startsWith('image/'));
+  if (!arr.length) return;
+  let done = 0;
+  arr.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const works = loadWorks();
+      works.push({
+        id: 'w_' + Date.now() + '_' + Math.random().toString(36).slice(2),
+        name: file.name.replace(/\.[^.]+$/, ''),
+        src: e.target.result,
+      });
+      saveWorks(works);
+      done++;
+      if (done === arr.length) { renderGrid(); showToast(`${done} image${done>1?'s':''} added`); }
+    };
+    reader.readAsDataURL(file);
+  });
+  fileInput.value = '';
+}
+</script>
+</body>
+</html>
