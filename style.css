@@ -27,15 +27,15 @@
     line-height: 1.8;
     transition: background 0.3s, color 0.3s;
   }
-  main { max-width: 680px; margin: 0 auto; padding: 6rem 2rem 5rem; }
+  main { max-width: 680px; margin: 0 auto; padding: 7rem 2rem 5rem; }
 
   .avatar-wrap {
-    width: 60px; height: 36px; margin-bottom: 24px;
+    width: 92px; height: 36px; margin-bottom: 24px;
     position: relative; border-radius: 5px; overflow: hidden;
     cursor: pointer; display: block; flex-shrink: 0;
   }
   .avatar-wrap:hover { opacity: 0.92; }
-  .avatar { width: 60px; height: 36px; display: block; border-radius: 5px; overflow: hidden; }
+  .avatar { width: 92px; height: 36px; display: block; border-radius: 5px; overflow: hidden; }
   .avatar-light { display: block; }
   .avatar-dark  { display: none; }
   [data-theme="dark"] .avatar-light { display: none; }
