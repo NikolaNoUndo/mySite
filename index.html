@@ -1,174 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nikola Stojkovic — Product Designer</title>
-  <meta name="description" content="B2B, AI, and fintech product designer. I design in the same logic your developers code — zero friction, faster launch, and digital experiences users trust." />
-  <meta name="author" content="Nikola Stojkovic" />
-  <link rel="canonical" href="https://itsnikola.site/" />
-  <meta property="og:type"         content="website" />
-  <meta property="og:url"          content="https://itsnikola.site/" />
-  <meta property="og:title"        content="Nikola Stojkovic — Product Designer" />
-  <meta property="og:description"  content="B2B, AI, and fintech product designer. I design in the same logic your developers code — zero friction, faster launch, and digital experiences users trust." />
-  <meta property="og:image"        content="https://itsnikola.site/images/og-card.png" />
-  <meta property="og:image:width"  content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale"       content="en_US" />
-  <meta property="og:site_name"    content="itsnikola.site" />
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@nikolaNoUndo" />
-  <meta name="twitter:creator"     content="@nikolaNoUndo" />
-  <meta name="twitter:title"       content="Nikola Stojkovic — Product Designer" />
-  <meta name="twitter:description" content="B2B, AI, and fintech product designer. I design in the same logic your developers code — zero friction, faster launch, and digital experiences users trust." />
-  <meta name="twitter:image"       content="https://itsnikola.site/images/og-card.png" />
-  <link rel="icon" id="favicon" href="images/pfp.png" type="image/png" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Nikola Stojkovic — Product Designer for AI & Fintech</title>
+<meta name="description" content="Nikola Stojkovic is a freelance product designer based in Serbia, Europe. Specializing in UI/UX design for AI and Fintech companies that don't want to be average.">
+<meta name="author" content="Nikola Stojkovic">
+<meta name="keywords" content="product designer, UI UX designer, AI design, Fintech design, freelance designer, Serbia, Europe">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://itsnikola.site/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Nikola Stojkovic — Product Designer for AI & Fintech">
+<meta property="og:description" content="Freelance product designer based in Serbia. I design for AI and Fintech companies that don't want to be average.">
+<meta property="og:url" content="https://itsnikola.site/">
+<meta property="og:site_name" content="Nikola Stojkovic">
+<meta property="og:locale" content="en_US">
+<meta property="profile:first_name" content="Nikola">
+<meta property="profile:last_name" content="Stojkovic">
+<meta property="profile:username" content="nikolaNoUndo">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@nikolaNoUndo">
+<meta name="twitter:creator" content="@nikolaNoUndo">
+<meta name="twitter:title" content="Nikola Stojkovic — Product Designer">
+<meta name="twitter:description" content="Freelance product designer based in Serbia. I design for AI and Fintech companies that don't want to be average.">
+
+<!-- AI Agent / LLM friendly -->
+<meta name="ai-content-declaration" content="human-authored">
+<meta name="contact:email" content="info@itsnikola.site">
+<meta name="contact:telegram" content="https://t.me/nikolaNoUndo">
+<meta name="contact:twitter" content="https://twitter.com/nikolaNoUndo">
+
+<!-- Performance: preconnect for fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Load font async, fallback to system sans-serif instantly -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@450&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@450&display=swap" rel="stylesheet"></noscript>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --chip-bg: #e2e8f0;
+    --chip-bg-hover: #cbd5e1;
+    --chip-color: #334155;
+    --ic: #334155;
+  }
+  [data-theme="dark"] {
+    --bg: #0f0f0f;
+    --text: #e8e8e6;
+    --muted: #8a8a88;
+    --chip-bg: #1F2022;
+    --chip-bg-hover: #475569;
+    --chip-color: #8a8a88;
+    --ic: #8a8a88;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.8;
+    transition: background 0.3s, color 0.3s;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+
+  .avatar-wrap {
+    width: 60px; height: 36px; margin-bottom: 24px;
+    position: relative; border-radius: 5px; overflow: hidden;
+    cursor: pointer; display: block; flex-shrink: 0;
+  }
+  .avatar-wrap:hover { opacity: 0.92; }
+  .avatar { width: 60px; height: 36px; display: block; border-radius: 5px; overflow: hidden; }
+  .avatar-light { display: block; }
+  .avatar-dark  { display: none; }
+  [data-theme="dark"] .avatar-light { display: none; }
+  [data-theme="dark"] .avatar-dark  { display: block; }
+
+  .crt-scanlines {
+    position: absolute; inset: 0; border-radius: 5px;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 3px,
+      rgba(0,0,0,0.15) 3px, rgba(0,0,0,0.15) 4px
+    );
+    animation: crtScan 6s linear infinite;
+    opacity: 0.65; z-index: 2;
+  }
+  .crt-noise {
+    position: absolute; inset: 0; border-radius: 5px;
+    pointer-events: none; opacity: 0.03; z-index: 3;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: crtNoise 0.12s steps(1) infinite;
+  }
+  .crt-vignette {
+    position: absolute; inset: 0; border-radius: 5px;
+    pointer-events: none; z-index: 4;
+    background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.4) 100%);
+  }
+  .crt-close-top, .crt-close-bot {
+    position: absolute; left: 0; right: 0; height: 0%;
+    background: #1E1C1C; pointer-events: none; z-index: 5;
+    transition: none;
+  }
+  .crt-close-top { top: 0; border-radius: 5px 5px 0 0; }
+  .crt-close-bot { bottom: 0; border-radius: 0 0 5px 5px; }
+  .crt-hline {
+    position: absolute; left: 0; right: 0; height: 0px;
+    background: linear-gradient(0deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    pointer-events: none; opacity: 0; z-index: 6;
+  }
+  .avatar-wrap.crt-off .avatar-light,
+  .avatar-wrap.crt-off .avatar-dark { opacity: 0; }
+  .avatar-wrap.crt-off .crt-scanlines,
+  .avatar-wrap.crt-off .crt-noise { opacity: 0; }
+  .avatar-wrap.crt-boot .avatar-light,
+  .avatar-wrap.crt-boot .avatar-dark { opacity: 0; }
+  .avatar-wrap.crt-boot .crt-scanlines,
+  .avatar-wrap.crt-boot .crt-noise { opacity: 0; }
+
+  @keyframes crtScan {
+    0%   { background-position: 0 0; }
+    100% { background-position: 0 120px; }
+  }
+  @keyframes crtNoise {
+    0%   { background-position: 0 0; }
+    25%  { background-position: -15px 8px; }
+    50%  { background-position: 8px -12px; }
+    75%  { background-position: -4px 16px; }
+    100% { background-position: 12px -4px; }
+  }
+  .greeting { font-size: 14px; color: var(--muted); margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+  p { margin-bottom: 1rem; }
+
+
+
+  .clock-display {
+    font-size: 14px;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+  }
+  .clock-seg {
+    position: relative;
+    overflow: hidden;
+    height: 1.2em;
+    display: inline-flex;
+    align-items: center;
+  }
+  .clock-seg span {
+    display: block;
+    line-height: 1.2em;
+  }
+  .clock-seg span.exit {
+    animation: segExit 0.3s cubic-bezier(0.4,0,0.2,1) forwards;
+    position: absolute;
+  }
+  .clock-seg span.enter {
+    animation: segEnter 0.3s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
+  @keyframes segExit {
+    from { transform: translateY(0); opacity: 1; }
+    to   { transform: translateY(-1.3em); opacity: 0; }
+  }
+  @keyframes segEnter {
+    from { transform: translateY(1.3em); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  .clock-colon-el {
+    padding: 0 1px;
+    transition: opacity 0.35s ease;
+  }
+  .clock-colon-el.dim { opacity: 0.15; }
+
+  /* CHIP */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 4px;
+    border-radius: 4px;
+    background: var(--chip-bg);
+    color: var(--chip-color);
+    font-size: 14px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 450;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    border: none;
+    vertical-align: middle;
+    position: relative;
+    line-height: 1;
+    transition: background 0.15s;
+  }
+  .chip:hover { background: var(--chip-bg-hover); }
+  .chip svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .chip svg path { stroke: var(--ic); }
+  .chip .fi path { fill: var(--ic); stroke: none; }
+
+  /* copy/check swap for mail chip */
+  .icon-swap {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .copy-icon, .check-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .copy-icon { opacity: 1; transform: scale(1); }
+  .check-icon { opacity: 0; transform: scale(0.4) rotate(-20deg); }
+  .chip.copied .copy-icon { opacity: 0; transform: scale(0.4) rotate(20deg); }
+  .chip.copied .check-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+
+  /* THEME TOGGLE */
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--muted);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 450;
+    font-size: 14px;
+  }
+  .theme-icon-wrap { position: relative; width: 15px; height: 15px; flex-shrink: 0; }
+  .sun-svg, .moon-svg {
+    position: absolute; top: 0; left: 0; width: 15px; height: 15px;
+    transition: opacity 0.3s, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .sun-svg path, .moon-svg path { fill: var(--muted); transition: fill 0.2s; }
+  .theme-toggle:hover { color: var(--text); }
+  .theme-toggle:hover .sun-svg path,
+  .theme-toggle:hover .moon-svg path { fill: var(--text); }
+  [data-theme="light"] .sun-svg { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+  [data-theme="light"] .moon-svg { opacity: 1; transform: none; }
+  [data-theme="dark"] .sun-svg { opacity: 1; transform: none; }
+  [data-theme="dark"] .moon-svg { opacity: 0; transform: rotate(90deg) scale(0.6); }
+</style>
+
+<!-- Structured Data for AI agents and search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nikola Stojkovic",
+  "url": "https://itsnikola.site",
+  "email": "info@itsnikola.site",
+  "jobTitle": "Product Designer",
+  "description": "Freelance product designer based in Serbia, Europe. Specializing in UI/UX for AI and Fintech companies.",
+  "knowsAbout": ["Product Design", "UI Design", "UX Design", "AI Products", "Fintech", "Figma"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "RS",
+    "addressRegion": "Serbia"
+  },
+  "sameAs": [
+    "https://twitter.com/nikolaNoUndo",
+    "https://t.me/nikolaNoUndo",
+    "https://baked.design"
+  ]
+}
+</script>
 </head>
-<body>
+<body data-theme="dark">
+<main>
+<article itemscope itemtype="https://schema.org/Person">
 
-  <div class="email-wrapper">
-
-    <!-- Subject + label + actions -->
-    <div class="email-header">
-      <div class="subject-row">
-        <h1 class="subject">Re: The Conversation Starter</h1>
-        <span class="label">Inbox <span class="label-x">×</span></span>
-      </div>
-      <div class="header-icons">
-        <!-- Desktop: Print + External -->
-        <button class="icon-btn desktop-only" title="Print">
-          <img src="icons/print.svg" width="18" height="18" alt="Print" class="icon" />
-        </button>
-        <button class="icon-btn desktop-only" title="Open in new window">
-          <img src="icons/external-link.svg" width="18" height="18" alt="Open in new window" class="icon" />
-        </button>
-        <!-- Mobile: reply visible in header -->
-        <button class="icon-btn mobile-only" title="Reply" id="mobileReplyBtn">
-          <img src="icons/reply.svg" width="18" height="18" alt="Reply" class="icon" />
-        </button>
-        <!-- Mobile: three-dots -->
-        <div class="more-menu-wrap mobile-only">
-          <button class="icon-btn" title="More options" id="moreBtn">
-            <img src="icons/more.svg" width="18" height="18" alt="More" class="icon" />
-          </button>
-          <div class="more-dropdown" id="moreDropdown">
-            <button class="more-item" id="menuStar">
-              <img src="icons/star.svg" width="18" height="18" alt="" class="icon more-icon" id="moreStarIcon" />
-              <span id="moreStarLabel">Star</span>
-            </button>
-            <button class="more-item" id="menuEmoji">
-              <img src="icons/emoji.svg" width="18" height="18" alt="" class="icon more-icon" id="moreEmojiIcon" />
-              <span id="moreEmojiLabel">Add reaction</span>
-            </button>
-            <div class="more-divider"></div>
-            <button class="more-item" id="menuPrint">
-              <img src="icons/print.svg" width="18" height="18" alt="" class="icon more-icon" />Print
-            </button>
-            <button class="more-item" id="menuNewWindow">
-              <img src="icons/external-link.svg" width="18" height="18" alt="" class="icon more-icon" />Open in new window
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sender row -->
-    <div class="sender-row">
-      <div class="avatar" id="avatarBtn">
-        <img src="images/pfp.png" alt="Profile Picture" class="avatar-img" id="avatarImg" />
-      </div>
-
-      <div class="sender-info">
-        <div class="sender-top">
-          <span class="sender-name">Nikola Stojkovic</span>
-          <span class="sender-email">&lt;info@itsnikola.site&gt;</span>
-          <span class="time">15:43 (45 minutes ago)</span>
-          <!-- Desktop action icons -->
-          <div class="action-icons desktop-only">
-            <button class="icon-btn" title="Star">
-              <img src="icons/star.svg" width="18" height="18" alt="Star" class="icon" />
-            </button>
-            <button class="icon-btn" title="Emoji">
-              <img src="icons/emoji.svg" width="18" height="18" alt="Emoji" class="icon" />
-            </button>
-            <button class="icon-btn" title="Reply">
-              <img src="icons/reply.svg" width="18" height="18" alt="Reply" class="icon" />
-            </button>
-            <button class="icon-btn" id="readBtn" title="Mark as read">
-              <img src="icons/check-single.svg" width="18" height="18" alt="Mark as read" class="icon" id="checkIcon" />
-            </button>
-          </div>
-        </div>
-        <div class="sender-to-row">
-          <div class="sender-to">
-            to You
-            <img src="icons/chevron-down.svg" width="14" height="14" alt="" class="chevron icon" />
-          </div>
-          <span class="time-mobile">15:43 (45 minutes ago)</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Body -->
-    <div class="email-body">
-      <p>Hi [Name],</p>
-      <p>Most designers just draw pretty screens. Having sharpened my approach at <a href="https://baked.design" target="_blank" rel="noopener" style="color:#202124;font-weight:500;text-underline-offset:3px;">baked.design</a>, I build B2B, AI, and fintech interfaces that actually work, scale, and clear out technical debt.</p>
-      <p>Open to a quick chat about your product goals? If your development pipeline needs a faster, precision launch, let's stop guessing the strategy.</p>
-      <p>In the meantime, you can <a href="#" id="worksLink" class="works-chip"><img src="icons/works-icon.svg" width="16" height="16" alt="" class="works-chip-icon" />see_my_works.here</a></p>
-      <p>All the best,<br>Nikola Stojkovic</p>
-      <hr class="email-divider" />
-      <p class="social-links">
-        <a href="https://x.com/nikolaNoUndo" target="_blank" rel="noopener">X (Twitter)</a>,
-        <a href="https://www.linkedin.com/in/nikolanoundo" target="_blank" rel="noopener">LinkedIn</a>,
-        <a href="https://t.me/nikolaNoUndo" target="_blank" rel="noopener">Telegram</a>
-      </p>
-    </div>
-
-
-
+  <div class="avatar-wrap crt-boot" id="avatarWrap" title="click" role="button" tabindex="0" aria-label="Logo">
+  <svg class="avatar avatar-light" width="60" height="36" viewBox="0 0 60 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nikola Stojkovic logo">
+    <g clip-path="url(#c)">
+      <rect y="24" width="60" height="12" fill="#FF00FB"/><rect y="12" width="60" height="12" fill="white"/><rect width="60" height="12" fill="#00A1EC"/>
+      <path d="M6 6L0 12H6V6Z" fill="white"/><path d="M6 30L0 24H6V30Z" fill="white"/><path d="M18 24L12 30H18V24Z" fill="white"/><path d="M6 6L12 12H6V6Z" fill="white"/><path d="M12 30L6 24H12V30Z" fill="white"/><path d="M18 24L24 30H18V24Z" fill="white"/><path d="M24 30L30 36H24V30Z" fill="#B100AE"/><path d="M30 30L36 36H30V30Z" fill="#B100AE"/><path d="M48 30L54 36H48V30Z" fill="#B100AE"/><path d="M42 36L48 30H42V36Z" fill="#B100AE"/><path d="M54 36L60 30H54V36Z" fill="#B100AE"/><path d="M18 36L24 30H18V36Z" fill="#B100AE"/><path d="M18 36L12 30H18V36Z" fill="#B100AE"/><path d="M12 36L6 30H12V36Z" fill="#B100AE"/><path d="M54 24L60 30H54V24Z" fill="white"/><rect x="36" y="6" width="24" height="6" fill="white"/><path d="M54 30L48 24H54V30Z" fill="white"/><path d="M48 24L42 30H48V24Z" fill="white"/><path d="M54 6L60 12H54V6Z" fill="white"/><path d="M36 6L42 12H36V6Z" fill="white"/><path d="M36 6L30 12H36V6Z" fill="white"/><path d="M60 0L54 6H60V0Z" fill="white"/><path d="M48 0L54 6H48V0Z" fill="white"/><path d="M48 0L42 6H48V0Z" fill="white"/>
+      <path d="M13.898 15.42H8.552L10.708 6.818H20.344L19.816 8.952H14.47L13.392 13.264H18.738L16.054 24H6.418L6.946 21.844H12.292L13.898 15.42ZM25.4786 11.108H29.7686L29.2406 13.264H24.9506L22.7946 21.844H27.0846L26.5566 24H17.9766L22.2666 6.818H26.5566L25.4786 11.108ZM31.673 11.108H42.409L39.197 24H28.461L31.673 11.108ZM37.591 13.264H35.435L33.279 21.844H35.435L37.591 13.264ZM44.3273 11.108H55.0633L51.8513 24H45.4053L44.3273 28.29H40.0373L44.3273 11.108ZM50.2453 13.264H48.0893L45.9333 21.844H48.0893L50.2453 13.264Z" fill="#ECCC00"/>
+      <path d="M6.946 21.844H12.292L13.282 17.906H17.572L16.054 24H6.418L6.946 21.844ZM8.64 15.09L8.86 14.166H18.496L18.276 15.09H8.64ZM18.738 13.264L18.606 13.726H8.97L9.19 12.912H13.48L13.392 13.264H18.738ZM13.304 17.796L13.59 16.652H17.88L17.594 17.796H13.304ZM13.898 15.42H18.188L17.946 16.432H13.656L13.898 15.42ZM10.334 8.314L10.422 7.94H20.058L19.97 8.314H10.334ZM9.322 12.384L9.498 11.68H13.788L13.612 12.384H9.322ZM9.652 11.02L9.806 10.426H14.096L13.942 11.02H9.652ZM9.982 9.678L10.114 9.194H14.404L14.272 9.678H9.982ZM20.344 6.818L20.3 6.972H10.664L10.708 6.818H20.344ZM26.5566 24H17.9766L19.4946 17.906H23.7846L22.7946 21.844H27.0846L26.5566 24ZM20.8806 12.384L21.0566 11.68H29.6366L29.4606 12.384H20.8806ZM24.9506 13.264L24.8186 13.726H20.5286L20.7486 12.912H29.3286L29.2406 13.264H24.9506ZM19.5166 17.796L19.8026 16.652H24.0926L23.8066 17.796H19.5166ZM19.8686 16.432L20.1106 15.42H24.4006L24.1586 16.432H19.8686ZM20.1986 15.09L20.4186 14.166H24.7086L24.4886 15.09H20.1986ZM21.2106 11.02L21.3646 10.426H25.6546L25.5006 11.02H21.2106ZM21.5406 9.678L21.6726 9.194H25.9626L25.8306 9.678H21.5406ZM21.8926 8.314L21.9806 7.94H26.2706L26.1826 8.314H21.8926ZM26.5566 6.818L26.5126 6.972H22.2226L22.2666 6.818H26.5566ZM39.197 24H28.461L29.979 17.906H34.269L33.279 21.844H35.435L36.425 17.906H40.715L39.197 24ZM37.591 13.264H35.435L35.303 13.726H31.013L31.233 12.912H41.969L41.749 13.726H37.459L37.591 13.264ZM31.365 12.384L31.541 11.68H42.277L42.101 12.384H31.365ZM30.001 17.796L30.287 16.652H34.577L34.291 17.796H30.001ZM36.447 17.796L36.733 16.652H41.023L40.737 17.796H36.447ZM30.353 16.432L30.595 15.42H34.885L34.643 16.432H30.353ZM36.799 16.432L37.041 15.42H41.331L41.089 16.432H36.799ZM30.683 15.09L30.903 14.166H35.193L34.973 15.09H30.683ZM37.129 15.09L37.349 14.166H41.639L41.419 15.09H37.129ZM51.8513 24H45.4053L44.3273 28.29H40.0373L42.6333 17.906H46.9233L45.9333 21.844H48.0893L49.0793 17.906H53.3693L51.8513 24ZM50.2453 13.264H48.0893L47.9573 13.726H43.6673L43.8873 12.912H54.6233L54.4033 13.726H50.1133L50.2453 13.264ZM44.0193 12.384L44.1953 11.68H54.9313L54.7553 12.384H44.0193ZM42.6553 17.796L42.9413 16.652H47.2313L46.9453 17.796H42.6553ZM49.1013 17.796L49.3873 16.652H53.6773L53.3913 17.796H49.1013ZM43.0073 16.432L43.2493 15.42H47.5393L47.2973 16.432H43.0073ZM49.4533 16.432L49.6953 15.42H53.9853L53.7433 16.432H49.4533ZM43.3373 15.09L43.5573 14.166H47.8473L47.6273 15.09H43.3373ZM49.7833 15.09L50.0033 14.166H54.2933L54.0733 15.09H49.7833Z" fill="#FF0000"/>
+    </g>
+    <defs><clipPath id="c"><rect width="60" height="36" rx="5" fill="white"/></clipPath></defs>
+  </svg>
+  <svg class="avatar avatar-dark" width="60" height="36" viewBox="0 0 60 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nikola Stojkovic logo"><g clip-path="url(#clip0_1217_7818)">
+<rect y="24" width="60" height="12" fill="#000FDC"/><rect y="12" width="60" height="12" fill="#030B7B"/><rect width="60" height="12" fill="#021924"/>
+<path d="M6 6L0 12H6V6Z" fill="#030B7B"/><path d="M6 30L0 24H6V30Z" fill="#030B7B"/><path d="M18 24L12 30H18V24Z" fill="#030B7B"/><path d="M6 6L12 12H6V6Z" fill="#030B7B"/><path d="M12 30L6 24H12V30Z" fill="#030B7B"/><path d="M18 24L24 30H18V24Z" fill="#030B7B"/><path d="M24 30L30 36H24V30Z" fill="#000BA6"/><path d="M30 30L36 36H30V30Z" fill="#000BA6"/><path d="M48 30L54 36H48V30Z" fill="#000BA6"/><path d="M42 36L48 30H42V36Z" fill="#000BA6"/><path d="M54 36L60 30H54V36Z" fill="#000BA6"/><path d="M18 36L24 30H18V36Z" fill="#000BA6"/><path d="M18 36L12 30H18V36Z" fill="#000BA6"/><path d="M12 36L6 30H12V36Z" fill="#000BA6"/><path d="M54 24L60 30H54V24Z" fill="#030B7B"/><rect x="36" y="6" width="24" height="6" fill="#030B7B"/><path d="M54 30L48 24H54V30Z" fill="#030B7B"/><path d="M48 24L42 30H48V24Z" fill="#030B7B"/><path d="M54 6L60 12H54V6Z" fill="#030B7B"/><path d="M36 6L42 12H36V6Z" fill="#030B7B"/><path d="M36 6L30 12H36V6Z" fill="#030B7B"/><path d="M60 0L54 6H60V0Z" fill="#030B7B"/><path d="M48 0L54 6H48V0Z" fill="#030B7B"/><path d="M48 0L42 6H48V0Z" fill="#030B7B"/>
+<g opacity="0.6" filter="url(#filter0_f_1217_7818)"><path d="M13.898 15.42H8.552L10.708 6.818H20.344L19.816 8.952H14.47L13.392 13.264H18.738L16.054 24H6.418L6.946 21.844H12.292L13.898 15.42ZM25.4786 11.108H29.7686L29.2406 13.264H24.9506L22.7946 21.844H27.0846L26.5566 24H17.9766L22.2666 6.818H26.5566L25.4786 11.108ZM31.673 11.108H42.409L39.197 24H28.461L31.673 11.108ZM37.591 13.264H35.435L33.279 21.844H35.435L37.591 13.264ZM44.3273 11.108H55.0633L51.8513 24H45.4053L44.3273 28.29H40.0373L44.3273 11.108ZM50.2453 13.264H48.0893L45.9333 21.844H48.0893L50.2453 13.264Z" fill="#ECCC00"/><path d="M6.946 21.844H12.292L13.282 17.906H17.572L16.054 24H6.418L6.946 21.844ZM8.64 15.09L8.86 14.166H18.496L18.276 15.09H8.64ZM18.738 13.264L18.606 13.726H8.97L9.19 12.912H13.48L13.392 13.264H18.738ZM13.304 17.796L13.59 16.652H17.88L17.594 17.796H13.304ZM13.898 15.42H18.188L17.946 16.432H13.656L13.898 15.42ZM10.334 8.314L10.422 7.94H20.058L19.97 8.314H10.334ZM9.322 12.384L9.498 11.68H13.788L13.612 12.384H9.322ZM9.652 11.02L9.806 10.426H14.096L13.942 11.02H9.652ZM9.982 9.678L10.114 9.194H14.404L14.272 9.678H9.982ZM20.344 6.818L20.3 6.972H10.664L10.708 6.818H20.344ZM26.5566 24H17.9766L19.4946 17.906H23.7846L22.7946 21.844H27.0846L26.5566 24ZM20.8806 12.384L21.0566 11.68H29.6366L29.4606 12.384H20.8806ZM24.9506 13.264L24.8186 13.726H20.5286L20.7486 12.912H29.3286L29.2406 13.264H24.9506ZM19.5166 17.796L19.8026 16.652H24.0926L23.8066 17.796H19.5166ZM19.8686 16.432L20.1106 15.42H24.4006L24.1586 16.432H19.8686ZM20.1986 15.09L20.4186 14.166H24.7086L24.4886 15.09H20.1986ZM21.2106 11.02L21.3646 10.426H25.6546L25.5006 11.02H21.2106ZM21.5406 9.678L21.6726 9.194H25.9626L25.8306 9.678H21.5406ZM21.8926 8.314L21.9806 7.94H26.2706L26.1826 8.314H21.8926ZM26.5566 6.818L26.5126 6.972H22.2226L22.2666 6.818H26.5566ZM39.197 24H28.461L29.979 17.906H34.269L33.279 21.844H35.435L36.425 17.906H40.715L39.197 24ZM37.591 13.264H35.435L35.303 13.726H31.013L31.233 12.912H41.969L41.749 13.726H37.459L37.591 13.264ZM31.365 12.384L31.541 11.68H42.277L42.101 12.384H31.365ZM30.001 17.796L30.287 16.652H34.577L34.291 17.796H30.001ZM36.447 17.796L36.733 16.652H41.023L40.737 17.796H36.447ZM30.353 16.432L30.595 15.42H34.885L34.643 16.432H30.353ZM36.799 16.432L37.041 15.42H41.331L41.089 16.432H36.799ZM30.683 15.09L30.903 14.166H35.193L34.973 15.09H30.683ZM37.129 15.09L37.349 14.166H41.639L41.419 15.09H37.129ZM51.8513 24H45.4053L44.3273 28.29H40.0373L42.6333 17.906H46.9233L45.9333 21.844H48.0893L49.0793 17.906H53.3693L51.8513 24ZM50.2453 13.264H48.0893L47.9573 13.726H43.6673L43.8873 12.912H54.6233L54.4033 13.726H50.1133L50.2453 13.264ZM44.0193 12.384L44.1953 11.68H54.9313L54.7553 12.384H44.0193ZM42.6553 17.796L42.9413 16.652H47.2313L46.9453 17.796H42.6553ZM49.1013 17.796L49.3873 16.652H53.6773L53.3913 17.796H49.1013ZM43.0073 16.432L43.2493 15.42H47.5393L47.2973 16.432H43.0073ZM49.4533 16.432L49.6953 15.42H53.9853L53.7433 16.432H49.4533ZM43.3373 15.09L43.5573 14.166H47.8473L47.6273 15.09H43.3373ZM49.7833 15.09L50.0033 14.166H54.2933L54.0733 15.09H49.7833Z" fill="#FF00E6"/></g>
+<path d="M13.898 15.42H8.552L10.708 6.818H20.344L19.816 8.952H14.47L13.392 13.264H18.738L16.054 24H6.418L6.946 21.844H12.292L13.898 15.42ZM25.4786 11.108H29.7686L29.2406 13.264H24.9506L22.7946 21.844H27.0846L26.5566 24H17.9766L22.2666 6.818H26.5566L25.4786 11.108ZM31.673 11.108H42.409L39.197 24H28.461L31.673 11.108ZM37.591 13.264H35.435L33.279 21.844H35.435L37.591 13.264ZM44.3273 11.108H55.0633L51.8513 24H45.4053L44.3273 28.29H40.0373L44.3273 11.108ZM50.2453 13.264H48.0893L45.9333 21.844H48.0893L50.2453 13.264Z" fill="#ECCC00"/>
+<path d="M6.946 21.844H12.292L13.282 17.906H17.572L16.054 24H6.418L6.946 21.844ZM8.64 15.09L8.86 14.166H18.496L18.276 15.09H8.64ZM18.738 13.264L18.606 13.726H8.97L9.19 12.912H13.48L13.392 13.264H18.738ZM13.304 17.796L13.59 16.652H17.88L17.594 17.796H13.304ZM13.898 15.42H18.188L17.946 16.432H13.656L13.898 15.42ZM10.334 8.314L10.422 7.94H20.058L19.97 8.314H10.334ZM9.322 12.384L9.498 11.68H13.788L13.612 12.384H9.322ZM9.652 11.02L9.806 10.426H14.096L13.942 11.02H9.652ZM9.982 9.678L10.114 9.194H14.404L14.272 9.678H9.982ZM20.344 6.818L20.3 6.972H10.664L10.708 6.818H20.344ZM26.5566 24H17.9766L19.4946 17.906H23.7846L22.7946 21.844H27.0846L26.5566 24ZM20.8806 12.384L21.0566 11.68H29.6366L29.4606 12.384H20.8806ZM24.9506 13.264L24.8186 13.726H20.5286L20.7486 12.912H29.3286L29.2406 13.264H24.9506ZM19.5166 17.796L19.8026 16.652H24.0926L23.8066 17.796H19.5166ZM19.8686 16.432L20.1106 15.42H24.4006L24.1586 16.432H19.8686ZM20.1986 15.09L20.4186 14.166H24.7086L24.4886 15.09H20.1986ZM21.2106 11.02L21.3646 10.426H25.6546L25.5006 11.02H21.2106ZM21.5406 9.678L21.6726 9.194H25.9626L25.8306 9.678H21.5406ZM21.8926 8.314L21.9806 7.94H26.2706L26.1826 8.314H21.8926ZM26.5566 6.818L26.5126 6.972H22.2226L22.2666 6.818H26.5566ZM39.197 24H28.461L29.979 17.906H34.269L33.279 21.844H35.435L36.425 17.906H40.715L39.197 24ZM37.591 13.264H35.435L35.303 13.726H31.013L31.233 12.912H41.969L41.749 13.726H37.459L37.591 13.264ZM31.365 12.384L31.541 11.68H42.277L42.101 12.384H31.365ZM30.001 17.796L30.287 16.652H34.577L34.291 17.796H30.001ZM36.447 17.796L36.733 16.652H41.023L40.737 17.796H36.447ZM30.353 16.432L30.595 15.42H34.885L34.643 16.432H30.353ZM36.799 16.432L37.041 15.42H41.331L41.089 16.432H36.799ZM30.683 15.09L30.903 14.166H35.193L34.973 15.09H30.683ZM37.129 15.09L37.349 14.166H41.639L41.419 15.09H37.129ZM51.8513 24H45.4053L44.3273 28.29H40.0373L42.6333 17.906H46.9233L45.9333 21.844H48.0893L49.0793 17.906H53.3693L51.8513 24ZM50.2453 13.264H48.0893L47.9573 13.726H43.6673L43.8873 12.912H54.6233L54.4033 13.726H50.1133L50.2453 13.264ZM44.0193 12.384L44.1953 11.68H54.9313L54.7553 12.384H44.0193ZM42.6553 17.796L42.9413 16.652H47.2313L46.9453 17.796H42.6553ZM49.1013 17.796L49.3873 16.652H53.6773L53.3913 17.796H49.1013ZM43.0073 16.432L43.2493 15.42H47.5393L47.2973 16.432H43.0073ZM49.4533 16.432L49.6953 15.42H53.9853L53.7433 16.432H49.4533ZM43.3373 15.09L43.5573 14.166H47.8473L47.6273 15.09H43.3373ZM49.7833 15.09L50.0033 14.166H54.2933L54.0733 15.09H49.7833Z" fill="#FF00E6"/>
+</g>
+<defs>
+<filter id="filter0_f_1217_7818" x="-3.58203" y="-3.18164" width="68.6455" height="41.4717" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur_1217_7818"/></filter>
+<clipPath id="clip0_1217_7818"><rect width="60" height="36" rx="5" fill="white"/></clipPath>
+</defs></svg>
+    <div class="crt-scanlines"></div>
+    <div class="crt-noise"></div>
+    <div class="crt-vignette"></div>
+    <div class="crt-close-top" id="crtTop" style="height:50%"></div>
+    <div class="crt-close-bot" id="crtBot" style="height:50%"></div>
+    <div class="crt-hline" id="crtLine"></div>
   </div>
 
-  <!-- ── Works Lightbox ── -->
-  <div class="lb-overlay" id="lbOverlay" aria-hidden="true">
-    <div class="lb-main">
-      <!-- Toolbar -->
-      <div class="lb-toolbar">
-        <div class="lb-toolbar-left">
-          <button class="lb-btn" id="lbClose" title="Close">
-            <img src="icons/close.svg" width="18" height="18" alt="Close" class="lb-icon" />
-          </button>
-          <div class="lb-title">
-            <img src="icons/works-icon.svg" width="16" height="16" alt="" style="border-radius:3px;flex-shrink:0;" />
-            <span>see_my_works.here</span>
-          </div>
-        </div>
-        <div class="lb-toolbar-right">
-          <button class="lb-btn" id="lbDownload" title="Save image">
-            <img src="icons/download.svg" width="18" height="18" alt="Download" class="lb-icon" />
-          </button>
-          <button class="lb-btn" id="lbPrint" title="Print">
-            <img src="icons/print.svg" width="18" height="18" alt="Print" class="lb-icon" />
-          </button>
-        </div>
-      </div>
+  <p class="greeting"><span>hey, こんにちは</span><span id="clock" class="clock-display"></span></p>
 
-      <!-- Scrollable images -->
-      <div class="lb-scroll" id="lbScroll">
-        <div class="lb-inner" id="lbInner"></div>
-      </div>
-    </div>
-  </div>
+  <p>I'm Nikola Stojkovic, a product designer based in Europe, Serbia.</p>
+  <p>If you found me, it means you're on the right track, so just keep going! Because I design for AI and Fintech focused companies that don't want to be average.</p>
+  <p>I work as a freelancer, but I sharpened my skills at <a href="https://baked.design" class="chip" target="_blank" rel="noopener noreferrer" itemprop="affiliation">baked.design<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.625 3.75H4.5C3.8 3.75 3.45 3.75 3.18 3.886C2.947 4.006 2.756 4.197 2.636 4.433C2.5 4.7 2.5 5.05 2.5 5.75V10.5C2.5 11.2 2.5 11.55 2.636 11.818C2.756 12.053 2.947 12.244 3.18 12.364C3.45 12.5 3.8 12.5 4.5 12.5H9.25C9.95 12.5 10.3 12.5 10.568 12.364C10.803 12.244 10.994 12.053 11.114 11.818C11.25 11.55 11.25 11.2 11.25 10.5V9.375" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.875 6.25V2.5H9.125M12.875 2.5L7.25 8.125" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  <p>Unrelated, in my free time I follow F1 and watch anime (AoT currently)</p>
+  <p>You can reach me out via
+    <a href="https://t.me/nikolaNoUndo" class="chip" target="_blank" rel="noopener noreferrer me">Telegram<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.625 3.75H4.5C3.8 3.75 3.45 3.75 3.18 3.886C2.947 4.006 2.756 4.197 2.636 4.433C2.5 4.7 2.5 5.05 2.5 5.75V10.5C2.5 11.2 2.5 11.55 2.636 11.818C2.756 12.053 2.947 12.244 3.18 12.364C3.45 12.5 3.8 12.5 4.5 12.5H9.25C9.95 12.5 10.3 12.5 10.568 12.364C10.803 12.244 10.994 12.053 11.114 11.818C11.25 11.55 11.25 11.2 11.25 10.5V9.375" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.875 6.25V2.5H9.125M12.875 2.5L7.25 8.125" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    or
+    <span class="chip" data-copy="info@itsnikola.site" role="button" tabindex="0" aria-label="Copy email info@itsnikola.site">info@itsnikola.site<span class="icon-swap"><span class="copy-icon"><svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5V4.5C5 3.8 5 3.45 5.136 3.183C5.256 2.947 5.447 2.756 5.683 2.636C5.95 2.5 6.3 2.5 7 2.5H10.5C11.2 2.5 11.55 2.5 11.818 2.636C12.053 2.756 12.244 2.947 12.364 3.183C12.5 3.45 12.5 3.8 12.5 4.5V8C12.5 8.7 12.5 9.05 12.364 9.318C12.244 9.553 12.053 9.744 11.818 9.864C11.55 10 11.2 10 10.5 10H10M10 7V10.5C10 11.2 10 11.55 9.864 11.818C9.744 12.053 9.553 12.244 9.318 12.364C9.05 12.5 8.7 12.5 8 12.5H4.5C3.8 12.5 3.45 12.5 3.183 12.364C2.947 12.244 2.756 12.053 2.636 11.818C2.5 11.55 2.5 11.2 2.5 10.5V7C2.5 6.3 2.5 5.95 2.636 5.683C2.756 5.447 2.947 5.256 3.183 5.136C3.45 5 3.8 5 4.5 5H8C8.7 5 9.05 5 9.318 5.136C9.553 5.256 9.744 5.447 9.864 5.683C10 5.95 10 6.3 10 7Z" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="check-icon"><svg class="fi" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 1.25C4.048 1.25 1.25 4.048 1.25 7.5C1.25 10.952 4.048 13.75 7.5 13.75C10.952 13.75 13.75 10.952 13.75 7.5C13.75 4.048 10.952 1.25 7.5 1.25ZM9.859 6.333C10.077 6.066 10.038 5.672 9.771 5.454C9.504 5.235 9.11 5.275 8.891 5.542L6.516 8.445L5.754 7.683C5.51 7.439 5.115 7.439 4.871 7.683C4.626 7.927 4.626 8.323 4.871 8.567L6.121 9.817C6.245 9.942 6.417 10.008 6.594 9.999C6.77 9.99 6.934 9.907 7.046 9.771L9.859 6.333Z"/></svg></span></span></span>
+    and follow me at
+    <a href="https://twitter.com/nikolaNoUndo" class="chip" target="_blank" rel="noopener noreferrer me">@nikolaNoUndo<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.625 3.75H4.5C3.8 3.75 3.45 3.75 3.18 3.886C2.947 4.006 2.756 4.197 2.636 4.433C2.5 4.7 2.5 5.05 2.5 5.75V10.5C2.5 11.2 2.5 11.55 2.636 11.818C2.756 12.053 2.947 12.244 3.18 12.364C3.45 12.5 3.8 12.5 4.5 12.5H9.25C9.95 12.5 10.3 12.5 10.568 12.364C10.803 12.244 10.994 12.053 11.114 11.818C11.25 11.55 11.25 11.2 11.25 10.5V9.375" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.875 6.25V2.5H9.125M12.875 2.5L7.25 8.125" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>.
+  </p>
 
-  <!-- Hidden print iframe -->
-  <iframe id="printFrame" style="display:none;"></iframe>
+  <p style="margin-top:1rem">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Change appearance">
+      <span class="theme-icon-wrap">
+        <svg class="sun-svg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#sc)"><path d="M7.968 1.104C7.968.846 7.758.636 7.499.636C7.24.636 7.03.846 7.03 1.104V2.057C7.03 2.315 7.24 2.525 7.499 2.525C7.758 2.525 7.968 2.315 7.968 2.057V1.104Z"/><path d="M2.645 11.691C2.462 11.874 2.462 12.171 2.645 12.354C2.828 12.537 3.125 12.537 3.308 12.354L3.981 11.681C4.164 11.498 4.164 11.201 3.981 11.018C3.798 10.835 3.501 10.835 3.318 11.018L2.645 11.691Z"/><path d="M7.499 12.475C7.758 12.475 7.968 12.685 7.968 12.943V13.895C7.968 14.154 7.758 14.364 7.499 14.364C7.24 14.364 7.03 14.154 7.03 13.895V12.943C7.03 12.685 7.24 12.475 7.499 12.475Z"/><path d="M11.016 3.319C10.833 3.502 10.833 3.799 11.016 3.982C11.199 4.165 11.496 4.165 11.679 3.982L12.352 3.309C12.535 3.126 12.535 2.829 12.352 2.646C12.169 2.463 11.873 2.463 11.689 2.646L11.016 3.319Z"/><path d="M12.473 7.5C12.473 7.241 12.683 7.031 12.941 7.031H13.894C14.152 7.031 14.362 7.241 14.362 7.5C14.362 7.759 14.152 7.969 13.894 7.969H12.941C12.683 7.969 12.473 7.759 12.473 7.5Z"/><path d="M11.679 11.017C11.496 10.834 11.199 10.834 11.016 11.017C10.833 11.2 10.833 11.497 11.016 11.68L11.689 12.353C11.873 12.536 12.169 12.536 12.352 12.353C12.535 12.17 12.535 11.873 12.352 11.69L11.679 11.017Z"/><path d="M.635 7.5C.635 7.241.845 7.031 1.104 7.031H2.056C2.314 7.031 2.524 7.241 2.524 7.5C2.524 7.759 2.314 7.969 2.056 7.969H1.104C.845 7.969.635 7.759.635 7.5Z"/><path d="M3.308 2.646C3.125 2.463 2.828 2.463 2.645 2.646C2.462 2.829 2.462 3.126 2.645 3.309L3.318 3.982C3.501 4.165 3.798 4.165 3.981 3.982C4.164 3.799 4.164 3.502 3.981 3.319L3.308 2.646Z"/><path d="M4.847 4.848C6.312 3.384 8.686 3.384 10.151 4.848C11.615 6.313 11.615 8.687 10.151 10.152C8.686 11.616 6.312 11.616 4.847 10.152C3.383 8.687 3.383 6.313 4.847 4.848Z"/></g><defs><clipPath id="sc"><rect width="15" height="15" fill="white"/></clipPath></defs></svg>
+        <svg class="moon-svg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 1.25C4.048 1.25 1.25 4.048 1.25 7.5C1.25 10.952 4.048 13.75 7.5 13.75C10.952 13.75 13.75 10.952 13.75 7.5C13.75 7.457 13.75 7.415 13.749 7.373C13.745 7.199 13.646 7.042 13.491 6.964C13.337 6.885 13.151 6.899 13.009 6.999C12.424 7.413 11.71 7.656 10.938 7.656C8.953 7.656 7.344 6.047 7.344 4.063C7.344 3.29 7.587 2.576 8.001 1.991C8.101 1.849 8.115 1.663 8.036 1.509C7.958 1.354 7.801 1.255 7.627 1.251C7.585 1.25 7.543 1.25 7.5 1.25Z"/></svg>
+      </span>
+      Change appearance
+    </button>
+  </p>
 
-  <!-- ── Dizzy modal ── -->
-  <div class="dizzy-modal" id="dizzyModal">
-    <span class="dizzy-emoji" id="dizzyEmoji">😵‍💫</span>
-  </div>
+</article>
+</main>
+<script>
+  function toggleTheme() {
+    const d = document.body.getAttribute('data-theme') === 'dark';
+    document.body.setAttribute('data-theme', d ? 'light' : 'dark');
+    try { localStorage.setItem('theme', d ? 'light' : 'dark'); } catch(e){}
+  }
+  (function(){
+    try { const s = localStorage.getItem('theme'); if(s) document.body.setAttribute('data-theme', s); } catch(e){}
+  })();
+  // Clock with flip animation on digit change and smooth colon blink
+  var _ck = { h0:'', h1:'', m0:'', m1:'' };
 
-  <script src="script.js"></script>
+  function flipSeg(id, val) {
+    const seg = document.getElementById('cks-'+id);
+    if (!seg) return;
+    const cur = seg.querySelector('span:not(.exit)');
+    if (cur && cur.textContent === val) return;
+    if (cur) {
+      cur.classList.add('exit');
+      setTimeout(function(){ if(cur.parentNode) cur.remove(); }, 320);
+    }
+    const neo = document.createElement('span');
+    neo.textContent = val;
+    neo.classList.add('enter');
+    seg.appendChild(neo);
+    setTimeout(function(){ neo.classList.remove('enter'); }, 320);
+  }
+
+  function initClock() {
+    const el = document.getElementById('clock');
+    if (!el) return;
+    const now = new Date();
+    const h = String(now.getHours() % 12 || 12).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+    el.innerHTML =
+      '<span class="clock-seg" id="cks-h0"><span>'+h[0]+'</span></span>' +
+      '<span class="clock-seg" id="cks-h1"><span>'+h[1]+'</span></span>' +
+      '<span class="clock-colon-el" id="cks-colon">:</span>' +
+      '<span class="clock-seg" id="cks-m0"><span>'+m[0]+'</span></span>' +
+      '<span class="clock-seg" id="cks-m1"><span>'+m[1]+'</span></span>' +
+      '<span>&nbsp;</span>' +
+      '<span class="clock-seg" id="cks-ap"><span>'+ampm+'</span></span>';
+    _ck = { h0:h[0], h1:h[1], m0:m[0], m1:m[1], ap:ampm };
+  }
+
+  var _lastMinKey = -1;
+  function tickClock() {
+    const now = new Date();
+    const h = String(now.getHours() % 12 || 12).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+    const sec = now.getSeconds();
+    // colon blink
+    const colon = document.getElementById('cks-colon');
+    if (colon) colon.classList.toggle('dim', sec % 2 === 0);
+    // flip digits on minute change
+    const minKey = now.getHours() * 60 + now.getMinutes();
+    if (minKey !== _lastMinKey) {
+      flipSeg('h0', h[0]); flipSeg('h1', h[1]);
+      flipSeg('m0', m[0]); flipSeg('m1', m[1]);
+      flipSeg('ap', ampm);
+      _lastMinKey = minKey;
+    }
+  }
+  initClock();
+  setInterval(tickClock, 1000);
+
+  document.querySelectorAll('[data-copy]').forEach(function(el) {
+    function doCopy() {
+      navigator.clipboard.writeText(el.dataset.copy).then(function() {
+        el.classList.add('copied');
+        setTimeout(function(){ el.classList.remove('copied'); }, 2000);
+      }).catch(function() {
+        var t = document.createElement('textarea');
+        t.value = el.dataset.copy; t.style.cssText = 'position:fixed;opacity:0';
+        document.body.appendChild(t); t.select(); document.execCommand('copy'); document.body.removeChild(t);
+        el.classList.add('copied');
+        setTimeout(function(){ el.classList.remove('copied'); }, 2000);
+      });
+    }
+    el.addEventListener('click', doCopy);
+    el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') doCopy(); });
+  });
+
+  // CRT shutdown/power-on for avatar
+  (function(){
+    var wrap = document.getElementById('avatarWrap');
+    var crtTop = document.getElementById('crtTop');
+    var crtBot = document.getElementById('crtBot');
+    var crtLine = document.getElementById('crtLine');
+    if (!wrap) return;
+    var isOff = false, animating = false;
+
+    function easeIn(t){ return t*t*t; }
+    function easeOut(t){ return 1-Math.pow(1-t,3); }
+
+    function getSvg(){
+      var theme = document.body.getAttribute('data-theme') || 'dark';
+      return theme === 'dark'
+        ? wrap.querySelector('.avatar-dark')
+        : wrap.querySelector('.avatar-light');
+    }
+
+    function shutdown(){
+      animating = true;
+      var svg = getSvg();
+      var start = performance.now();
+      var dur = 600;
+      function step(ts){
+        var p = Math.min((ts-start)/dur, 1);
+        if(p < 0.22){
+          svg.style.opacity = Math.random()>0.3 ? 1 : 0.4+Math.random()*0.5;
+        } else {
+          var cp = (p-0.22)/0.78;
+          var e = easeIn(cp);
+          var pct = e*50;
+          crtTop.style.height = pct+'%';
+          crtBot.style.height = pct+'%';
+          svg.style.opacity = Math.max(0, 1 - cp*2.2);
+          if(cp>0.28 && cp<0.82){
+            var lp = (cp-0.28)/0.54;
+            crtLine.style.opacity = Math.sin(lp*Math.PI)*0.55;
+            crtLine.style.height = '2px';
+            crtLine.style.top = (50 - pct*0.12)+'%';
+          } else {
+            crtLine.style.opacity = 0;
+          }
+        }
+        if(p<1){ requestAnimationFrame(step); }
+        else {
+          crtTop.style.height='50%'; crtBot.style.height='50%';
+          svg.style.opacity=0; crtLine.style.opacity=0;
+          wrap.classList.add('crt-off');
+          isOff=true; animating=false;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    function powerOn(){
+      animating = true;
+      wrap.classList.remove('crt-off');
+      var svg = getSvg();
+      svg.style.opacity = 0;
+      var start = performance.now();
+      var dur = 500;
+      function step(ts){
+        var p = Math.min((ts-start)/dur, 1);
+        var e = easeOut(p);
+        var pct = (1-e)*50;
+        crtTop.style.height = pct+'%';
+        crtBot.style.height = pct+'%';
+        if(p>0.45){ svg.style.opacity = easeOut((p-0.45)/0.55); }
+        if(p<1){ requestAnimationFrame(step); }
+        else {
+          crtTop.style.height='0%'; crtBot.style.height='0%';
+          svg.style.opacity=1; isOff=false; animating=false;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    function bootOn(){
+      animating = true;
+      wrap.classList.remove('crt-off');
+      var svg = getSvg();
+      svg.style.opacity = 0;
+      var start = performance.now();
+      var dur = 2800;
+      var flickerDone = false;
+      function step(ts){
+        var p = Math.min((ts-start)/dur, 1);
+        // phase 1 (0-0.18): tinja, ploče se jedva mrdaju
+        if(p < 0.18){
+          var fp = p/0.18;
+          var wiggle = fp * 4;
+          crtTop.style.height = (50 - wiggle)+'%';
+          crtBot.style.height = (50 - wiggle)+'%';
+          if(fp > 0.5 && Math.random() > 0.6){
+            crtLine.style.opacity = (Math.random()*0.4).toString();
+            crtLine.style.height = '1px';
+            crtLine.style.top = (50 - wiggle*0.5)+'%';
+          } else {
+            crtLine.style.opacity = '0';
+          }
+        }
+        // phase 2 (0.18-0.45): polako se otvaraju, svetlosna linija
+        else if(p < 0.45){
+          var cp = (p-0.18)/0.27;
+          var pct = 50 - easeOut(cp)*32;
+          crtTop.style.height = pct+'%';
+          crtBot.style.height = pct+'%';
+          crtLine.style.opacity = (Math.sin(cp*Math.PI)*0.5).toString();
+          crtLine.style.height = '2px';
+          crtLine.style.top = pct+'%';
+          svg.style.opacity = '0';
+        }
+        // phase 3 (0.45-0.72): flicker logo pojavljuje se
+        else if(p < 0.72){
+          var cp2 = (p-0.45)/0.27;
+          var pct2 = 18 - cp2*14;
+          crtTop.style.height = pct2+'%';
+          crtBot.style.height = pct2+'%';
+          crtLine.style.opacity = '0';
+          var flicker = Math.random()>0.4 ? cp2*0.9 : cp2*0.3;
+          svg.style.opacity = Math.min(flicker, 0.85).toString();
+        }
+        // phase 4 (0.72-1.0): finalno otvaranje, logo stabilan
+        else {
+          var cp3 = (p-0.72)/0.28;
+          var pct3 = (1-easeOut(cp3))*4;
+          crtTop.style.height = pct3+'%';
+          crtBot.style.height = pct3+'%';
+          svg.style.opacity = (0.85 + easeOut(cp3)*0.15).toString();
+        }
+        if(p<1){ requestAnimationFrame(step); }
+        else {
+          crtTop.style.height='0%'; crtBot.style.height='0%';
+          crtLine.style.opacity='0';
+          svg.style.opacity='1';
+          isOff=false; animating=false;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    function toggle(){
+      if(animating) return;
+      if(isOff) powerOn(); else shutdown();
+    }
+    wrap.addEventListener('click', toggle);
+    wrap.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') toggle(); });
+
+    // boot: power-on animation on page load
+    setTimeout(function(){
+      wrap.classList.remove('crt-boot');
+      bootOn();
+    }, 600);
+  })();
+</script>
 </body>
 </html>
