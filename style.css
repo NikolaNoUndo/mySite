@@ -27,7 +27,7 @@
     line-height: 1.8;
     transition: background 0.3s, color 0.3s;
   }
-  main { max-width: 680px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+  main { max-width: 680px; margin: 0 auto; padding: 6rem 2rem 5rem; }
 
   .avatar-wrap {
     width: 60px; height: 36px; margin-bottom: 24px;
