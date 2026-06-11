@@ -16,7 +16,7 @@
   --nav-active-bg: #2a2a2a;
   --nav-active-text: #e8e8e6;
   --nav-inactive-text: #8a8a88;
-  --link-color: #ffffff;
+  --link-color: #e8e8e6;
   --link-underline: rgba(255,255,255,0.35);
   --nav-hover-bg: rgba(255,255,255,0.07);
 }
@@ -107,29 +107,40 @@ main {
 p { margin-bottom: 1rem; }
 
 /* ── LINKS ── */
-a.link {
-  color: var(--link-color);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1.5px;
-  text-decoration-color: var(--link-underline);
-  transition: text-decoration-color 0.15s;
-}
-a.link:hover { text-decoration-color: var(--link-color); }
-
-/* Email copy */
+/* 1. Osnovni stil za linkove i email dugme */
+a.link,
 .email-copy {
-  cursor: pointer;
   color: var(--link-color);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1.5px;
-  text-decoration-color: var(--link-underline);
-  transition: text-decoration-color 0.15s;
+  text-decoration: none; /* Ovo sklanja onu staru ružnu liniju sa slike */
   position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
   white-space: nowrap;
 }
-.email-copy:hover { text-decoration-color: var(--link-color); }
+
+/* 2. Kreiranje skrivene linije (Krenuće od width: 0) */
+a.link::after, 
+.email-copy::after {
+  content: '';
+  position: absolute;
+  bottom: 0px; 
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #ffffff;
+  transition: width 0.2s ease-out;
+  
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); 
+}
+
+/* 3. Animacija isključivo na HOVER za oba elementa */
+a.link:hover::after, 
+.email-copy:hover::after {
+  width: 100%;
+}
 
 .copied-toast {
   position: absolute;
@@ -158,7 +169,7 @@ a.link:hover { text-decoration-color: var(--link-color); }
 /* Dock image (home) */
 .below-img {
   width: 100%;
-  max-width: 500px;
+  max-width: 680px;
   display: block;
   margin-top: 1rem;
 }
