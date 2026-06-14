@@ -128,7 +128,7 @@ a.link::after,
   left: 0;
   width: 0;
   height: 1.5px;
-  background-color: #ffffff;
+  background-color: var(--link-color);
   transition: width 0.2s ease-out;
   
   -webkit-backface-visibility: hidden;
