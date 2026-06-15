@@ -144,9 +144,6 @@ a.link:hover::after,
 
 .copied-toast {
   position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(16px);
   display: inline-flex;
   align-items: center;
   gap: 8px;
