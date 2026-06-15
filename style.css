@@ -144,6 +144,9 @@ a.link:hover::after,
 
 .copied-toast {
   position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -158,8 +161,11 @@ a.link:hover::after,
   color: #e8e8e6;
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
   opacity: 0;
-  transition: opacity 0.12s cubic-bezier(0.22, 1, 0.36, 1), transform 0.12s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  transition: opacity 0.12s cubic-bezier(0.22, 1, 0.36, 1), 
+              transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 .email-copy.show-toast .copied-toast {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
