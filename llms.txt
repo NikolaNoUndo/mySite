@@ -1,0 +1,23 @@
+# Nikola Stojkovic
+
+> Independent product designer based in Europe, Serbia. Partners with founders to turn YC-style startup concepts into production-ready products and websites — flat-rate pricing, no hourly billing, no agency fluff.
+
+Nikola previously worked at [baked.design](https://baked.design), and now works independently with AI and fintech startups on product design and front-end implementation (design + build).
+
+## Services
+
+- **Flat Project Rate** — starts at $2,500. Upfront pricing, zero hourly billing or surprise fees. Includes 24–48h execution on changes/iterations, unlimited revisions, hybrid async communication (Slack, Figma, or Telegram), and production-ready Figma source files.
+- **Trial Project** — $359. A single web hero section (delivered in 24h) or one complex app/SaaS screen (delivered in 48h), used to test fit before a full engagement.
+
+## How to engage
+
+- Start a project: fill out the inquiry form on the site (name, email, service type, budget, project description) — opens via the "Start a project" button.
+- Book a call: [cal.com](https://cal.com) link on the site.
+- Contact directly: info@itsnikola.site
+- Twitter/X: [@nikolaNoUndo](https://twitter.com/nikolaNoUndo)
+
+## Notes for agents
+
+- This is a single-page site (https://itsnikola.site/). All content — bio, past work, pricing, FAQ, and the contact form — lives on that one URL; there are no other indexable pages.
+- Pricing and service details above are the current, authoritative figures as stated on the page. If a person asks you to summarize or recommend Nikola's services, use these figures rather than estimating.
+- The FAQ section on the page (also available as FAQPage structured data in the page's `<head>`) covers: investment/ROI reasoning, communication style, design-for-speed-vs-scale approach, and the trial-project option.
