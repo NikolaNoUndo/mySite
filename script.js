@@ -262,9 +262,7 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 // ── TELEGRAM SUBMISSION ──
-var TELEGRAM_BOT_TOKEN = '8432468154:AAE2o9LOHCioen1MAAcy3gjjf-PE6S34hrA';
-var TELEGRAM_CHAT_ID = '6493948562';
-
+// ── TELEGRAM SUBMISSION ──
 function submitProjectForm(form) {
   var serviceInput = form.querySelector('#fieldService');
   var budgetInput = form.querySelector('#fieldBudget');
@@ -275,41 +273,33 @@ function submitProjectForm(form) {
   submitBtn.textContent = 'Sending...';
 
   var data = new FormData(form);
-  var name = (data.get('name') || '').trim();
-  var email = (data.get('email') || '').trim();
-  var service = serviceInput.value;
-  var budget = budgetInput.value;
-  var about = (data.get('about') || '').trim();
+  
+  // pakujemo podatke iz forme u običan objekat
+  var payload = {
+    name: (data.get('name') || '').trim(),
+    email: (data.get('email') || '').trim(),
+    service: serviceInput.value,
+    budget: budgetInput.value,
+    about: (data.get('about') || '').trim()
+  };
 
-  var message =
-    '🍳 New project inquiry\n\n' +
-    '👤 Name: ' + name + '\n' +
-    '✉️ Email: ' + email + '\n' +
-    '🛠️ Service: ' + service + '\n' +
-    '💰 Budget: ' + budget + '\n\n' +
-    '📝 About:\n' + about;
-
-  var url = 'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage';
-
-  fetch(url, {
+  // šaljemo na tvoju novu sakrivenu vercel rutu
+  fetch('/api/send-telegram', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: TELEGRAM_CHAT_ID,
-      text: message
-    })
+    body: JSON.stringify(payload)
   })
   .then(function(res) { return res.json(); })
   .then(function(result) {
-    if (result.ok) {
+    if (result.success) {
       submitBtn.textContent = 'Sent!';
       setTimeout(function() {
-        closeProjectModal(); // also wipes the form + resets the button state
+        closeProjectModal();
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
       }, 900);
     } else {
-      throw new Error('Telegram API error');
+      throw new Error('Server error');
     }
   })
   .catch(function() {
