@@ -253,11 +253,24 @@ window.addEventListener('DOMContentLoaded', function() {
   var form = document.getElementById('projectForm');
   if (form) {
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      form.dataset.attempted = '1';
-      var result = refreshFormUI(form);
-      if (result.valid) submitProjectForm(form);
-    });
+  e.preventDefault();
+  form.dataset.attempted = '1';
+  var result = refreshFormUI(form);
+
+  var toast = document.getElementById('formToast');
+  var toastText = document.getElementById('formToastText');
+  if (!result.valid && toast && toastText) {
+    toastText.textContent = result.type === 'email'
+      ? 'The email address is not entered correctly.'
+      : 'Please fill in all the fields.';
+    toast.classList.add('show');
+    setTimeout(function() {
+      toast.classList.remove('show');
+    }, 3500);
+  }
+
+  if (result.valid) submitProjectForm(form);
+});
   }
 });
 

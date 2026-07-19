@@ -1251,14 +1251,16 @@ a.link:hover::after,
 
 @media (max-width: 500px) {
   .form-submit-row {
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .form-error {
-    order: 2;
-    width: 100%;
+    display: none;
   }
-  .form-error.show { order: 2; }
+  .btn-cook {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 12px 12px 10px;
+  }
 }
 
 /* Light theme adjustments */
@@ -1314,4 +1316,26 @@ a.link:hover::after,
     overflow-y: visible;
     margin: 0 auto;
   }
+}
+.form-toast {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 32px);
+  padding: 10px 16px;
+  background: #171717;
+  border: 1px solid #991B1B;
+  border-radius: 10px;
+  color: #991B1B;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.form-toast.show {
+  display: flex;
 }
