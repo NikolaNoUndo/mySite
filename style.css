@@ -1319,15 +1319,15 @@ a.link:hover::after,
 }
 .form-toast {
   position: fixed;
-  top: 40px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999999;
   display: none;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;   /* ← bilo je center, ovo je fix */
+  gap: 10px;                  /* ← razmak ikonica–tekst, 8-12px kako si tražio */
   max-width: calc(100% - 32px);
-  padding: 10px 16px;
+  padding: 12px 14px;         /* ← manje spacinga nego na referentnoj slici, ovo je dovoljno */
   background: #171717;
   border: 1px solid #991B1B;
   border-radius: 10px;
@@ -1335,7 +1335,12 @@ a.link:hover::after,
   font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.02em;
+  line-height: 1.4;
 }
 .form-toast.show {
   display: flex;
+}
+.form-toast img {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
