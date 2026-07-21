@@ -259,7 +259,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   var toast = document.getElementById('formToast');
   var toastText = document.getElementById('formToastText');
-  if (!result.valid && toast && toastText) {
+  var isMobile = window.matchMedia && window.matchMedia('(max-width: 500px)').matches;
+  if (!result.valid && isMobile && toast && toastText) {
     toastText.textContent = result.type === 'email'
       ? 'The email address is not entered correctly.'
       : 'Please fill in all the fields.';
